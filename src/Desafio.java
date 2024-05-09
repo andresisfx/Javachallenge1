@@ -16,14 +16,12 @@ public class Desafio {
         System.out.println("\n***************************");
 
         String menu = """
-                *** Escriba el núnero de la opción deseada****
-                
-                1- Consular saldo
-                2- Retirar
-                3- Depositar
-                4-Salir 
-                
-                """;
+        *** Escriba el núnero de la opción deseada****
+        1- Consular saldo
+        2- Retirar
+        3- Depositar
+        4-Salir\s
+        """;
         Scanner teclado = new Scanner(System.in);
         while (opcion!=4){
             System.out.println(menu);
