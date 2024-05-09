@@ -1,16 +1,61 @@
+import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+public class Desafio {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        String nombre = "Tony Stark";
+        String tipoDeCuenta= "ahorros";
+        double saldo = 1599.52;
+        int opcion=0;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        System.out.println("**************************");
+        System.out.println("\nNombre del cliente "+ nombre);
+        System.out.println("El tipo de cuenta es: " +tipoDeCuenta);
+        System.out.println("Saldo disponible: " +saldo+"$");
+        System.out.println("\n***************************");
+
+        String menu = """
+                *** Escriba el núnero de la opción deseada****
+                
+                1- Consular saldo
+                2- Retirar
+                3- Depositar
+                4-Salir 
+                
+                """;
+        Scanner teclado = new Scanner(System.in);
+        while (opcion!=4){
+            System.out.println(menu);
+            opcion=teclado.nextInt();
+
+            switch (opcion){
+                case 1:
+                    System.out.println("Su saldo es "+saldo);
+                    break;
+                case 2:
+                    System.out.println("digite el monto a retirar");
+                      double valorARetirar= teclado.nextDouble();
+                      if(valorARetirar>saldo){
+                          System.out.println("saldo insuficiente");
+                          return;
+
+                      }else{
+                          saldo-=valorARetirar;
+                          System.out.println("Usted ha retirado "+valorARetirar+"$");
+
+                          System.out.println("Su saldo restante es "+saldo);
+                      }
+                    break;
+                case 3:
+                    System.out.println("Digite el monto que desea depositar");
+                    double valorAdepositar= teclado.nextDouble();
+                    System.out.println("Usted ha depositado "+valorAdepositar+"$");
+                    saldo+=valorAdepositar;
+                    System.out.println("Su saldo actual es de "+saldo+"$");
+                default:
+                    System.out.println("opción no válida");
+            }
         }
     }
 }
