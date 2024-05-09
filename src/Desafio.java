@@ -32,7 +32,7 @@ public class Desafio {
             switch (opcion){
                 case 1:
                     System.out.println("Su saldo es "+saldo);
-                    break;
+                     break;
                 case 2:
                     System.out.println("digite el monto a retirar");
                       double valorARetirar= teclado.nextDouble();
